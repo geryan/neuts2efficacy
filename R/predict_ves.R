@@ -55,6 +55,10 @@ predict_ves <- function(
     # swap out
     if(old_name %in% c("AZ_dose_1", "Pfizer_dose_1")) {
       new_neut <- old_neut + log10(omicron_infection_multiplier)
+    } else if(old_name == "mRNA_booster") {
+      new_neut <- log10_neuts_mRNA_booster + log10(1.33) - neut_model$model_objects$omicron_log10_neut_fold
+    } else if(old_name == "mRNA_dose_4") {
+      new_neut <- log10_neuts_mRNA_booster + log10(1.33) + log10(1.33) - neut_model$model_objects$omicron_log10_neut_fold
     } else{
       new_neut <- log10_neuts_mRNA_booster - neut_model$model_objects$omicron_log10_neut_fold
     }
