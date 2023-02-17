@@ -10,4 +10,4 @@ staging/
 .RData
 .Ruserdata
 todo.txt
-
+*.html
