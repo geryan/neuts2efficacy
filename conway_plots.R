@@ -1,3 +1,9 @@
+library(tidyverse)
+library(targets)
+
+ve_predictions_delta <- tar_read(ve_predictions_delta)
+ve_predictions_omicron <- tar_read(ve_predictions_omicron)
+
 waning_plot_delta_conway <- plot_waning(
     ve_predictions_delta,
     # neut_model$ve_data_modelling %>%
