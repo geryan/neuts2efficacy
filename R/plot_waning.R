@@ -17,8 +17,9 @@ plot_waning <- function(
     "Pfizer vaccine dose 1",
     "AZ vaccine dose 2",
     "AZ vaccine dose 1",
-    "WT Infection"
-  )
+    "WT Infection",
+  ),
+  ndays = 200
 ) {
 
   immunity_colours <- c(
@@ -91,7 +92,7 @@ plot_waning <- function(
       values = c("two doses" = 0.8, "one dose" = 0.1)
     ) +
     coord_cartesian(
-      xlim = c(0, 200)
+      xlim = c(0, ndays)
     ) +
     ylab("Efficacy") +
     xlab("Days since peak immunity") +
